@@ -35,8 +35,13 @@ public class MSPV3 {
 
 
 
+    public void putDouble(String KEY, double defValue) {
+        putString(KEY, String.valueOf(defValue));
+    }
 
-
+    public double getDouble(String KEY, double defValue) {
+        return Double.parseDouble(getString(KEY, String.valueOf(defValue)));
+    }
 
     public int getInt(String KEY, int defValue) {
         return sharedPreferences.getInt(KEY, defValue);
